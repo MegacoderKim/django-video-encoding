@@ -71,6 +71,7 @@ DATABASES = {
     }
 }
 
+VIDEO_ENCODING_TEMP_DIR = os.path.join(BASE_DIR, 'tempvideos')
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

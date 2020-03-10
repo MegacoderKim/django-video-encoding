@@ -4,6 +4,7 @@ import tempfile
 from django.apps import apps
 from django.contrib.contenttypes.models import ContentType
 from django.core.files import File
+from django.conf import settings
 
 from .backends import get_backend
 from .config import settings
@@ -61,7 +62,7 @@ def convert_video(fieldfile, force=False):
         # TODO do not upscale videos
 
         _, target_path = tempfile.mkstemp(
-            suffix='_{name}.{extension}'.format(**options))
+            suffix='_{name}.{extension}'.format(**options), dir=settings.VIDEO_ENCODING_TEMP_DIR)
 
         try:
             encoding = encoding_backend.encode(

@@ -7,6 +7,7 @@ class VideoEncodingAppConf(AppConf):
     PROGRESS_UPDATE = 30
     BACKEND = 'video_encoding.backends.ffmpeg.FFmpegBackend'
     BACKEND_PARAMS = {}
+    VIDEO_ENCODING_TEMP_DIR = None
     FORMATS = {
         'FFmpeg': [
             {
